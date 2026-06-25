@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wil-playground
-  namespace: dev
   labels:
     app: wil-playground
 spec:
@@ -19,18 +18,4 @@ spec:
       - name: playground
         image: wil42/playground:v1
         ports:
-        - containerPort: 3000
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "200m"
-          requests:
-            memory: "64Mi"
-            cpu: "100m"
-      tolerations:
-        - key: "node-role.kubernetes.io/control-plane"
-          operator: "Exists"
-          effect: "NoSchedule"
-        - key: "CriticalAddonsOnly"
-          operator: "Exists"
-          effect: "NoSchedule"
+        - containerPort: 8888
