@@ -4,6 +4,7 @@ metadata:
   name: wil-playground
   namespace: dev
 spec:
+  ingressClassName: traefik
   rules:
   - http:
       paths:
